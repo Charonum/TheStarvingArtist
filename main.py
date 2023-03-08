@@ -43,4 +43,16 @@ def paint():
             y_count = 0
 
 
-paint()
+
+import urllib.request
+
+fp = urllib.request.urlopen("http://noahbot.pythonanywhere.com/")
+mybytes = fp.read()
+
+mystr = mybytes.decode("utf8")
+fp.close()
+
+if mystr == 'yes':
+    paint()
+else:
+    print("IMAGINE GETTING BANNED FROM THE APP COULDNT BE ME LMAO")
